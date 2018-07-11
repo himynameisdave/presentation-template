@@ -5,6 +5,7 @@ var webpack = require("webpack");
 
 module.exports = {
   devtool: "cheap-module-source-map",
+  mode: "development",
   entry: [
     "babel-polyfill",
     'webpack-hot-middleware/client',
@@ -21,7 +22,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.md$/,
       loader: "html-loader!markdown-loader?gfm=false"
     }, {

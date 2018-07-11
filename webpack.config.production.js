@@ -4,6 +4,7 @@ var path = require("path");
 var webpack = require("webpack");
 
 module.exports = {
+  mode: "production",
   entry: [
     "babel-polyfill",
     "./index"
@@ -26,7 +27,7 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.md$/,
       loader: "html-loader!markdown-loader?gfm=false"
     }, {
